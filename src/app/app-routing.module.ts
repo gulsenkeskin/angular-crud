@@ -8,7 +8,9 @@ import { HomeComponent } from './home/home/home.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent, children: [{ path: 'add', component: AddcontactComponent }, { path: 'edit/:id', component: AddcontactComponent }] }
+  { path: 'contact', component: ContactComponent, children: [{ path: 'add', component: AddcontactComponent }, { path: 'edit/:id', component: AddcontactComponent }] },
+  { path: 'access', loadChildren: () => import("./access/access.module").then(opt => opt.AccessModule) },
+  { path: 'login', loadComponent: () => import("./login/login.component").then(opt => opt.LoginComponent) }
 ];
 
 @NgModule({
