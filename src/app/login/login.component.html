@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-title>User Login </mat-card-title>
   <mat-card-content>
-    <form #loginForm="ngForm">
+    <form #loginForm="ngForm" (submit)="prodceedLogin(loginForm)">
       <mat-form-field appearance="fill">
         <mat-label>Username</mat-label>
         <input
@@ -24,10 +24,10 @@
           ngModel
         />
       </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" type="submit">Login</button>
+        <a mat-raised-button color="accent" style="margin: 5px">Register</a>
+      </div>
     </form>
-    <div>
-      <button mat-raised-button color="primary" type="submit">Login</button>
-      <a mat-raised-button color="accent" style="margin: 5px">Register</a>
-    </div>
   </mat-card-content>
 </mat-card>

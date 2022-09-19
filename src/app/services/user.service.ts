@@ -9,7 +9,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  proceedLogin(inputData: any) {
+  prodceedLogin(inputData: any) {
 
     return this.http.post(`${environment.baseUrl}/User/Authenticate`, inputData);
   }
