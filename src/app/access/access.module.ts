@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AccessRoutingModule } from './access-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { MaterialModule } from '../material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { MaterialModule } from '../material.module';
   imports: [
     CommonModule,
     AccessRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class AccessModule { }

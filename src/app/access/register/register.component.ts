@@ -18,11 +18,16 @@ export class RegisterComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
-  reactiveForm = new FormGroup({
+  reactiveform = new FormGroup({
     userid: new FormControl('', Validators.required),
     name: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     email: new FormControl('', Validators.compose([Validators.required, Validators.email])),
   })
+
+
+  saveUser() {
+
+  }
 
 }
