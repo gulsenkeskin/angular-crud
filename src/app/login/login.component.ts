@@ -19,7 +19,11 @@ export class LoginComponent implements OnInit {
   }
 
   prodceedLogin(loginData: any) {
-    this.userService.prodceedLogin(loginData)
+    if (loginData.valid) {
+      this.userService.prodceedLogin(loginData)
+
+    }
+
 
   }
 }
