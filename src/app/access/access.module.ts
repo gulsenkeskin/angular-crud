@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AccessRoutingModule } from './access-routing.module';
 import { RegisterComponent } from './register/register.component';
+import { MaterialModule } from '../material.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     CommonModule,
-    AccessRoutingModule
+    AccessRoutingModule,
+    MaterialModule
   ]
 })
 export class AccessModule { }

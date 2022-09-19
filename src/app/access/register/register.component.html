@@ -1,1 +1,39 @@
-<p>register works!</p>
+<mat-card>
+  <mat-card-title>User Registeration </mat-card-title>
+  <mat-card-content>
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>User ID</mat-label>
+        <input matInput placeholder="UserID" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" type="password" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" />
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button color="primary" type="submit">
+          Register
+        </button>
+        <a
+          mat-raised-button
+          color="accent"
+          style="margin: 5px"
+          (click)="redirectLogin()"
+          >Close</a
+        >
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
