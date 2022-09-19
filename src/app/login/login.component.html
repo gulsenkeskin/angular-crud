@@ -1,4 +1,25 @@
-<h2>User Login</h2>
 <mat-card>
-  <mat-card-title> </mat-card-title>
+  <mat-card-title>User Login </mat-card-title>
+  <mat-card-content>
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" name="username" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          name="password"
+          type="password"
+        />
+      </mat-form-field>
+    </form>
+    <div>
+      <button mat-raised-button color="primary" type="submit">Login</button>
+      <a mat-raised-button color="accent" style="margin: 5px">Register</a>
+    </div>
+  </mat-card-content>
 </mat-card>
