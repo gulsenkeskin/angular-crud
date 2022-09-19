@@ -13,5 +13,14 @@ export class UserService {
 
     return this.http.post(`${environment.baseUrl}/User/Authenticate`, inputData);
   }
+  isLoggedIn() {
+    return localStorage.getItem('token') != null;
+
+  }
+
+  getToken() {
+    return localStorage.getItem('token') != null ? localStorage.getItem('token') : '';
+
+  }
 
 }
