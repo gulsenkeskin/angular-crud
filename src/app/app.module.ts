@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { StatusComponent } from './status/status.component';
 import { LoginComponent } from './login/login.component';
 import { AddcontactComponent } from './addcontact/addcontact.component';
+import { AccessRoutingModule } from './access/access-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddcontactComponent } from './addcontact/addcontact.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginComponent
+    LoginComponent,
+    AccessRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
