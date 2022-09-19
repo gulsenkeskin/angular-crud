@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../services/user.service';
-import { Router } from 'express';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
       this.userService.prodceedLogin(loginData.value).subscribe(item => {
         this.responseData = item;
         if (this.responseData != null) {
-          localStorage.setItem("token", this.responseData.jwtToken)
+          localStorage.setItem("token", this.responseData.jwtToken);
+          this.route.navigate(["home"]);
 
         } else {
           alert("Login failed")
