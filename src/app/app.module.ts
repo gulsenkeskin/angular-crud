@@ -26,9 +26,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
-    // LoginComponent,
+    BrowserAnimationsModule,
 
+
+    // LoginComponent,
     //bir modülün router'ını başka bir modülün içinde kullanabilmemizi sağlar 
     // AccessRoutingModule
   ],
