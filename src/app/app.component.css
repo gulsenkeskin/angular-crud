@@ -1,6 +1,7 @@
 a {
   color: white;
   padding: 5px;
+  text-decoration: none;
 }
 :host {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -157,17 +158,6 @@ svg#rocket-smoke {
   right: 180px;
   z-index: -10;
 }
-
-/* a,
-a:visited,
-a:hover {
-  color: #1976d2;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #125699;
-} */
 
 .terminal {
   position: relative;
