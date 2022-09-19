@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,10 +19,10 @@ export class RegisterComponent implements OnInit {
   }
 
   reactiveForm = new FormGroup({
-    userid: new FormControl(''),
-    name: new FormControl(''),
-    password: new FormControl(''),
-    email: new FormControl(''),
+    userid: new FormControl('', Validators.required),
+    name: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.compose([Validators.required, Validators.email])),
   })
 
 }
