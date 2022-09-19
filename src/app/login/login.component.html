@@ -4,7 +4,13 @@
     <form>
       <mat-form-field appearance="fill">
         <mat-label>Username</mat-label>
-        <input matInput placeholder="Username" name="username" />
+        <input
+          matInput
+          placeholder="Username"
+          name="username"
+          required
+          ngModel
+        />
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -14,6 +20,8 @@
           placeholder="Password"
           name="password"
           type="password"
+          required
+          ngModel
         />
       </mat-form-field>
     </form>
