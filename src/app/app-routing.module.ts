@@ -9,8 +9,8 @@ import { StatusComponent } from './status/status.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent, children: [{ path: 'add', component: AddcontactComponent }, { path: 'edit/:id', component: AddcontactComponent }] },
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
+  { path: 'contact', component: ContactComponent, children: [{ path: 'add', component: AddcontactComponent }, { path: 'edit/:id', component: AddcontactComponent }], canActivate: [AuthGuard] },
   { path: 'access', loadChildren: () => import("./access/access.module").then(opt => opt.AccessModule) },
   { path: 'login', loadComponent: () => import("./login/login.component").then(opt => opt.LoginComponent) },
   { path: "**", component: StatusComponent }
