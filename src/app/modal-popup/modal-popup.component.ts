@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserMasterService } from '../services/user-master.service';
+import * as alertifyjs from 'alertifyjs';
 
 @Component({
   selector: 'app-modal-popup',
@@ -10,8 +11,9 @@ import { UserMasterService } from '../services/user-master.service';
 })
 export class ModalPopupComponent implements OnInit {
 
-  constructor(private userMasterService: UserMasterService, @Inject(MAT_DIALOG_DATA) public data: any) { }
-  //modalı açarken verdiğimiz data burdaki data' ya gelir
+  constructor(private userMasterService: UserMasterService, @Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<ModalPopupComponent>) { }
+  //modalı açarken verdiğimiz data burdaki Inject iele aldıımız data' ya gelir
+  //MatDialogRef e modalı kapatırken vs ihtiyaç duyarız
 
   ngOnInit(): void {
     this.getAllRole();
@@ -20,6 +22,7 @@ export class ModalPopupComponent implements OnInit {
 
   roleData: any;
   editData: any;
+  saveData: any;
 
   updateForm = new FormGroup({
     userid: new FormControl({ value: "", disabled: true }),
@@ -28,6 +31,18 @@ export class ModalPopupComponent implements OnInit {
   })
 
   saveUser() {
+    if (this.updateForm.valid) {
+      this.userMasterService.updateUser(this.updateForm.getRawValue()).subscribe(item => {
+        this.saveData = item;
+        if (this.saveData.result == 'pass') {
+          alertifyjs.successfully("Updated successfully")
+          this.ref.close();
+
+        } else {
+          alertifyjs.error("Failed try again");
+        }
+      })
+    }
 
   }
 
