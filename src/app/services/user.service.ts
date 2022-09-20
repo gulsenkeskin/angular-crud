@@ -10,7 +10,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   prodceedLogin(inputData: any) {
-
     return this.http.post(`${environment.baseUrl}/User/Authenticate`, inputData);
   }
   isLoggedIn() {
@@ -20,7 +19,10 @@ export class UserService {
 
   getToken() {
     return localStorage.getItem('token') != null ? localStorage.getItem('token') : '';
+  }
 
+  registeration(inputData: any) {
+    return this.http.post(`${environment.baseUrl}/User/Register`, inputData);
   }
 
 }
