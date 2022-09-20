@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { AccessRoutingModule } from './access/access-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +24,15 @@ import { HttpClientModule } from '@angular/common/http';
     ContactComponent,
     StatusComponent,
     AddcontactComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
-
+    HttpClientModule,
+    MatTableModule
 
     // LoginComponent,
     //bir modülün router'ını başka bir modülün içinde kullanabilmemizi sağlar 
