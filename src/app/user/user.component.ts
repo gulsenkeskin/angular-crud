@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserModel } from '../model/user.model';
 import { UserMasterService } from '../services/user-master.service';
+import { alertify } from 'alertifyjs';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -47,6 +48,18 @@ export class UserComponent implements OnInit {
       this.dataSource = new MatTableDataSource<UserModel>(this.userDetail);
       this.dataSource.paginator = this.paginator;
     })
+  }
+
+  updateUser(userId: any) {
+
+  }
+
+  deleteUser(userId: any) {
+    this.service.removeUser(userId).subscribe(item => {
+      this.getAllUser();
+
+    })
+
   }
 
 

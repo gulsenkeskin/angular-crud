@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-import * as alertifyjs from 'alertifyjs';
+import { alertify } from 'alertifyjs';
 
 @Component({
   selector: 'app-register',
@@ -35,10 +35,10 @@ export class RegisterComponent implements OnInit {
         item => {
           this.responseData = item;
           if (this.responseData.result == 'pass') {
-            alertifyjs.successfully('Register successfully please contact admin for activation');
+            alertify.successfully('Register successfully please contact admin for activation');
             this.redirectLogin();
           } else {
-            alertifyjs.error('failed try again')
+            alertify.error('failed try again')
           }
 
         }
