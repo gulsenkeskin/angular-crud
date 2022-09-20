@@ -38,10 +38,13 @@ export class UserComponent implements OnInit {
   }
 
   deleteUser(userId: any) {
-    this.service.removeUser(userId).subscribe(item => {
-      alertifyjs.successfully('Removed successfully');
-      this.getAllUser();
-    })
+    alertifyjs.confirm("Remove user", "do you want remove this user?", () => {
+      this.service.removeUser(userId).subscribe(item => {
+        alertifyjs.successfully('Removed successfully');
+        this.getAllUser();
+      })
+    }, function () { })
+
   }
 
 
