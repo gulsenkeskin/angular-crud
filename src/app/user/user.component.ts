@@ -50,7 +50,7 @@ export class UserComponent implements OnInit {
   deleteUser(userId: any) {
     alertifyjs.confirm("Remove user", "do you want remove this user?", () => {
       this.service.removeUser(userId).subscribe(item => {
-        alertifyjs.successfully('Removed successfully');
+        alertifyjs.success('Removed successfully');
         this.getAllUser();
       })
     }, function () { })

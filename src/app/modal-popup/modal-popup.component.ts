@@ -34,10 +34,10 @@ export class ModalPopupComponent implements OnInit {
     if (this.updateForm.valid) {
       this.userMasterService.updateUser(this.updateForm.getRawValue()).subscribe(item => {
         this.saveData = item;
-        if (this.saveData.result == 'pass') {
-          alertifyjs.successfully("Updated successfully")
+        console.log(this.saveData)
+        if (this.saveData.result === 'pass') {
+          alertifyjs.success("Updated successfully")
           this.ref.close();
-
         } else {
           alertifyjs.error("Failed try again");
         }
