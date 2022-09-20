@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
         item => {
           this.responseData = item;
           if (this.responseData.result == 'pass') {
-            alertifyjs.successfully('Register successfully please contact admin for activation');
+            alertifyjs.success('Register successfully please contact admin for activation');
             this.redirectLogin();
           } else {
             alertifyjs.error('failed try again')
