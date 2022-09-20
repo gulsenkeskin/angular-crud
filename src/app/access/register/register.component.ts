@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserService) { }
+  responseData: any;
 
   ngOnInit(): void {
   }
@@ -27,6 +29,21 @@ export class RegisterComponent implements OnInit {
 
 
   saveUser() {
+    if (this.reactiveform.valid) {
+      this.userService.registeration(this.reactiveform.value).subscribe(
+        item => {
+          this.responseData = item;
+          if (this.responseData.result == 'pass') {
+            alert('Register successfully please contact admin for activation')
+            this.redirectLogin();
+          } else {
+            alert('failed try again')
+
+          }
+
+        }
+      )
+    }
 
   }
 
