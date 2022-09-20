@@ -8,3 +8,12 @@
 .margin {
   margin: 0 12px;
 }
+
+.end-button {
+  display: flex;
+  justify-content: end;
+}
+
+.spacer {
+  margin-right: 5px;
+}
