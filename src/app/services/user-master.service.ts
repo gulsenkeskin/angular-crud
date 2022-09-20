@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { UserModel } from '../model/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +11,8 @@ export class UserMasterService {
   apiurl = `${environment.baseUrl}/api/UserMaster`;
   constructor(private http: HttpClient) { }
 
-  getAllUser() {
-    return this.http.get(this.apiurl)
+  getAllUser(): Observable<UserModel[]> {
+    return this.http.get<UserModel[]>(this.apiurl)
   }
 
   getUserById(userId: any) {
