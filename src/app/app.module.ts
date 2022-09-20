@@ -16,6 +16,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { MaterialModule } from './material.module';
+import { ModalPopupComponent } from './modal-popup/modal-popup.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MaterialModule } from './material.module';
     ContactComponent,
     StatusComponent,
     AddcontactComponent,
-    UserComponent
+    UserComponent,
+    ModalPopupComponent
   ],
   imports: [
     BrowserModule,
