@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserMasterService } from '../services/user-master.service';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -26,10 +27,19 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class UserComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+  userDetail: any;
 
-  constructor() { }
+  constructor(private service: UserMasterService) { }
 
   ngOnInit(): void {
+    this.getAllUser()
   }
+
+  getAllUser() {
+    this.service.getAllUser().subscribe(item => {
+      this.userDetail = item;
+    })
+  }
+
 
 }
