@@ -26,4 +26,9 @@ export class UserMasterService {
   updateUser(inputData: any) {
     return this.http.post(`${this.apiurl}/ActivateUser`, inputData);
   }
+
+  getAllRoles() {
+    return this.http.get(`${environment.baseUrl}/User/GetAllRole`)
+
+  }
 }

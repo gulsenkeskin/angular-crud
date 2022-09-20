@@ -1,21 +1,29 @@
 <h2>Update User</h2>
-<h4>Basic mat-select</h4>
-<mat-form-field appearance="fill">
-  <mat-label>Role</mat-label>
-  <mat-select>
-    <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{food.viewValue}}
-    </mat-option> -->
-  </mat-select>
-</mat-form-field>
+<form [formGroup]="updateForm" (ngSubmit)="saveUser()">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>User Id</mat-label>
+    <input matInput placeholder="ID" formControlName="userid" />
+  </mat-form-field>
 
-<div>
-  <section class="section">
-    <mat-checkbox class="margin">Is Active</mat-checkbox>
-  </section>
-</div>
+  <mat-form-field appearance="fill">
+    <mat-label>Role</mat-label>
+    <mat-select formControlName="role">
+      <mat-option *ngFor="let role of roleData" [value]="role.roleid">
+        {{ role.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-<div class="end-button">
-  <button mat-raised-button color="primary" class="spacer">Change</button>
-  <button mat-raised-button color="accent">Close</button>
-</div>
+  <div>
+    <section class="section">
+      <mat-checkbox class="margin" formControlName="isActive"
+        >Is Active</mat-checkbox
+      >
+    </section>
+  </div>
+
+  <div class="end-button">
+    <button mat-raised-button color="primary" class="spacer">Change</button>
+    <button mat-raised-button color="accent">Close</button>
+  </div>
+</form>
