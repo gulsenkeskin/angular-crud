@@ -38,7 +38,8 @@ export class UserComponent implements OnInit {
   updateUser(userId: any) {
     this.dialog.open(ModalPopupComponent, {
       width: '400px',
-      height: '400px', exitAnimationDuration: '300ms', enterAnimationDuration: '300ms',
+      // height: '400px', 
+      exitAnimationDuration: '300ms', enterAnimationDuration: '300ms',
       data: {
         userid: userId
       }
