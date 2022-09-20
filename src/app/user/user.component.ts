@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserModel } from '../model/user.model';
 import { UserMasterService } from '../services/user-master.service';
-import { alertify } from 'alertifyjs';
+import * as alertifyjs from 'alertifyjs';
 
 
 @Component({
@@ -39,10 +39,9 @@ export class UserComponent implements OnInit {
 
   deleteUser(userId: any) {
     this.service.removeUser(userId).subscribe(item => {
+      alertifyjs.successfully('Removed successfully');
       this.getAllUser();
-
     })
-
   }
 
 
