@@ -5,6 +5,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { UserModel } from '../model/user.model';
 import { UserMasterService } from '../services/user-master.service';
 import * as alertifyjs from 'alertifyjs';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalPopupComponent } from '../modal-popup/modal-popup.component';
 
 
 @Component({
@@ -19,7 +21,7 @@ export class UserComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private service: UserMasterService) { }
+  constructor(private service: UserMasterService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getAllUser()
@@ -34,6 +36,13 @@ export class UserComponent implements OnInit {
   }
 
   updateUser(userId: any) {
+    this.dialog.open(ModalPopupComponent, {
+      width: '400px',
+      height: '400px', exitAnimationDuration: '300ms', enterAnimationDuration: '300ms',
+      data: {
+        userid: userId
+      }
+    })
 
   }
 
