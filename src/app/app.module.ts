@@ -13,9 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { AccessRoutingModule } from './access/access-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { MatTableModule } from '@angular/material/table';
 import { UserComponent } from './user/user.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatTableModule
+    MaterialModule
 
     // LoginComponent,
     //bir modülün router'ını başka bir modülün içinde kullanabilmemizi sağlar 
