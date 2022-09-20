@@ -41,7 +41,7 @@ export class UserComponent implements OnInit {
       // height: '400px', 
       exitAnimationDuration: '300ms', enterAnimationDuration: '300ms',
       data: {
-        userid: userId
+        userId: userId
       }
     })
 
