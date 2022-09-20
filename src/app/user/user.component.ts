@@ -25,9 +25,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
-  userDetail: any;
+  displayedColumns: string[] = ['userid', 'name', 'email', 'isactive', 'role'];
+  dataSource: any;
 
   constructor(private service: UserMasterService) { }
 
@@ -37,7 +36,7 @@ export class UserComponent implements OnInit {
 
   getAllUser() {
     this.service.getAllUser().subscribe(item => {
-      this.userDetail = item;
+      this.dataSource = item;
     })
   }
 
