@@ -9,7 +9,7 @@
   <a routerLink="home">Home</a>
   <a routerLink="about">About Us</a>
   <a routerLink="contact">Contact</a>
-  <a routerLink="user">User</a>
+  <a *ngIf="isAdmin" routerLink="user">User</a>
 
   <div class="spacer"></div>
   <a routerLink="login">Login</a>
