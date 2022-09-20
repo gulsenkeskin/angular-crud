@@ -6,10 +6,12 @@ import { ContactComponent } from './contact/contact.component';
 import { AuthGuard } from './guard/auth.guard';
 import { HomeComponent } from './home/home/home.component';
 import { StatusComponent } from './status/status.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'contact', component: ContactComponent, children: [{ path: 'add', component: AddcontactComponent }, { path: 'edit/:id', component: AddcontactComponent }], canActivate: [AuthGuard] },
   { path: 'access', loadChildren: () => import("./access/access.module").then(opt => opt.AccessModule) },
   { path: 'login', loadComponent: () => import("./login/login.component").then(opt => opt.LoginComponent) },
